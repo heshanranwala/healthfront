@@ -1,0 +1,121 @@
+/* Side Navigation Styles */
+:root { --sidenav-width: 25vmin; }
+
+.sidenav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: var(--sidenav-width);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-right: 0.2vmin solid rgba(0, 208, 132, 0.2);
+  padding: 2vmin;
+  display: grid;
+  align-content: start;
+  gap: 2vmin;
+  z-index: 100;
+  transition: transform 300ms ease;
+}
+
+.nav-header h3 {
+  color: var(--text);
+  font-size: clamp(1.2rem, 2.4vmin, 1.6rem);
+  margin: 0;
+  padding: 1vmin 0;
+  text-align: center;
+  border-bottom: 0.1vmin solid rgba(0, 208, 132, 0.2);
+}
+
+.nav-links {
+  display: grid;
+  gap: 1vmin;
+}
+
+.nav-links a {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2vmin;
+  align-items: center;
+  padding: 1.4vmin 1.6vmin;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1.2vmin;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  transition: all 200ms ease;
+  border: 0.1vmin solid transparent;
+}
+
+.nav-links a:hover { background: rgba(0, 208, 132, 0.12); border-color: var(--accent); transform: translateX(2px); }
+
+.nav-links a.active { background: var(--accent); color: white; border-color: var(--accent); box-shadow: 0 0.6vmin 1.6vmin rgba(0, 208, 132, 0.35); }
+
+.nav-links .icon {
+  font-size: clamp(1.2rem, 2.4vmin, 1.6rem);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  position: fixed;
+  top: 2vmin;
+  left: 2vmin;
+  width: 6vmin;
+  height: 6vmin;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 1vmin;
+  cursor: pointer;
+  z-index: 150;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.4vmin 1.6vmin rgba(0, 208, 132, 0.35);
+}
+
+.hamburger span {
+  display: block;
+  width: 60%;
+  height: 0.3vmin;
+  background: var(--text);
+  margin: 0.4vmin auto;
+  transition: all 200ms ease;
+}
+
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 90;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .sidenav {
+    transform: translateX(-100%);
+    width: 70vw;
+  }
+  
+  .sidenav.open {
+    transform: translateX(0);
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Ensure page content starts after sidenav */
+.dashboard, .appointments-page, .profile-page, .bmi-page, .vaccines-page {
+  padding-left: calc(var(--sidenav-width) + 2vmin);
+}
+
+@media (max-width: 900px) {
+  .dashboard, .appointments-page, .profile-page, .bmi-page, .vaccines-page { padding-left: 0; }
+}
+
+

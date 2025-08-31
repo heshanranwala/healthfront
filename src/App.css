@@ -1,0 +1,187 @@
+/* Welcome Section */
+.welcome-section {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(1200px 600px at 50% 10%, rgba(255,255,255,0.08), transparent),
+              linear-gradient(180deg, rgba(0,0,0,0.2), transparent 40%),
+              #121212;
+}
+
+.welcome-content {
+  text-align: center;
+}
+
+.welcome-title {
+  font-size: clamp(3rem, 10vw, 9rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.scroll-hint {
+  margin-top: 1rem;
+  color: #9aa0a6;
+}
+
+/* Auth Section */
+.auth-section {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: #0f0f10;
+  padding: 4vmin;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(6px);
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.auth-tabs > button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+}
+
+.auth-tabs > button.active {
+  border-color: #00D084;
+  background: rgba(0, 208, 132, 0.15);
+}
+
+.auth-form {
+  display: grid;
+  gap: clamp(10px, 2vw, 16px);
+}
+
+.auth-form label {
+  text-align: left;
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  color: #c7c9d1;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: clamp(10px, 1.8vw, 14px) clamp(12px, 2.2vw, 16px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  font-size: clamp(1rem, 1.8vw, 1.05rem);
+}
+
+.auth-form .primary {
+  margin-top: 6px;
+  width: 100%;
+  background: #00D084;
+  color: white;
+  padding: clamp(10px, 1.8vw, 14px) clamp(12px, 2.2vw, 16px);
+  font-size: clamp(1rem, 1.8vw, 1.05rem);
+}
+
+/* Landing template */
+.auth-landing {
+  width: min(1400px, 96vw);
+  margin: 0 auto;
+  text-align: center;
+}
+.page-title {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 clamp(8px, 1.2vw, 16px) 0;
+}
+.page-subtitle {
+  color: #c7c9d1;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.6;
+  max-width: min(90ch, 100%);
+  margin: 0 auto clamp(14px, 2vw, 22px) auto;
+}
+.actions-row {
+  display: inline-flex;
+  gap: clamp(10px, 2vw, 18px);
+  margin: clamp(8px, 1.4vw, 16px) 0 clamp(16px, 2.4vw, 28px) 0;
+}
+.actions-row > button {
+  padding: 1.8vmin 2.6vmin;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: inherit;
+  font-size: 2vmin;
+}
+.actions-row > button.primary {
+  background: #00D084;
+  color: white;
+  border-color: #00D084;
+}
+.offer-title {
+  margin: clamp(10px, 1.4vw, 16px) 0 clamp(12px, 1.6vw, 18px) 0;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+}
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2vmin;
+}
+.offer-card {
+  height: 24vh;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+@media (min-width: 640px) {
+  .offer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .offer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+.modal {
+  width: auto;
+  max-width: clamp(420px, 86vw, 720px);
+  background: #141414;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: clamp(12px, 2vw, 18px);
+  padding: clamp(16px, 3vw, 28px);
+  margin: 0 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  box-sizing: border-box;
+}
+.modal-close {
+  position: absolute;
+  top: clamp(10px, 1.6vw, 16px);
+  right: clamp(10px, 1.6vw, 16px);
+  background: transparent;
+  border: none;
+  color: #e5e5e5;
+  font-size: clamp(16px, 2.2vw, 20px);
+  cursor: pointer;
+}

@@ -1,0 +1,1059 @@
+/* Modern BMI Page Styles */
+.bmi-page {
+  display: block;
+  min-height: 100vh;
+  background: radial-gradient(60vmin 30vmin at 50% 10%, rgba(0, 208, 132, 0.15), transparent),
+              linear-gradient(180deg, rgba(16, 185, 129, 0.2), transparent 100%),
+              #000000;
+}
+
+.bmi-main {
+  padding: 4vmin;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive main container */
+@media (min-width: 768px) {
+  .bmi-main {
+    padding: 5vmin;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bmi-main {
+    padding: 6vmin;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bmi-main {
+    padding: 7vmin;
+  }
+}
+
+/* Header Section */
+.bmi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4vmin;
+  padding-bottom: 2vmin;
+  border-bottom: 0.2vmin solid rgba(0, 208, 132, 0.2);
+}
+
+.bmi-title {
+  font-size: clamp(2rem, 5vmin, 3rem);
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.add-bmi-btn {
+  display: flex;
+  align-items: center;
+  gap: 1vmin;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 1.2vmin 2.4vmin;
+  border-radius: 1.2vmin;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+  box-shadow: 0 0.4vmin 1.2vmin rgba(0, 208, 132, 0.4);
+}
+
+.add-bmi-btn:hover {
+  background: color-mix(in srgb, var(--accent) 80%, white);
+  transform: translateY(-0.2vmin);
+  box-shadow: 0 0.6vmin 1.6vmin rgba(0, 208, 132, 0.5);
+}
+
+.add-icon {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Dashboard Layout */
+.bmi-dashboard {
+  display: grid;
+  gap: 4vmin;
+}
+
+/* Responsive grid layout */
+@media (min-width: 1024px) {
+  .bmi-dashboard {
+    gap: 5vmin;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bmi-dashboard {
+    gap: 6vmin;
+  }
+}
+
+/* Stats Section */
+.bmi-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28vmin, 1fr));
+  gap: 3vmin;
+}
+
+/* Responsive stats layout */
+@media (min-width: 768px) {
+  .bmi-stats {
+    grid-template-columns: repeat(auto-fit, minmax(32vmin, 1fr));
+    gap: 4vmin;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bmi-stats {
+    grid-template-columns: repeat(auto-fit, minmax(35vmin, 1fr));
+    gap: 5vmin;
+  }
+}
+
+.bmi-card {
+  background: var(--panel);
+  border-radius: 2vmin;
+  padding: 3vmin;
+  box-shadow: 0 0.6vmin 2vmin rgba(0, 0, 0, 0.3);
+  border: 0.1vmin solid rgba(0, 208, 132, 0.2);
+  transition: all 200ms ease;
+}
+
+.bmi-card:hover {
+  transform: translateY(-0.2vmin);
+  box-shadow: 0 0.8vmin 2.4vmin rgba(0, 0, 0, 0.15);
+}
+
+.bmi-card.danger {
+  border-left: 0.4vmin solid var(--danger);
+}
+
+.bmi-card.ok {
+  border-left: 0.4vmin solid var(--ok);
+}
+
+.bmi-card.warn {
+  border-left: 0.4vmin solid var(--warn);
+}
+
+.bmi-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2vmin;
+}
+
+.bmi-card-header h3 {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.4vmin, 1.4rem);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.bmi-status {
+  padding: 0.6vmin 1.2vmin;
+  border-radius: 1vmin;
+  font-size: clamp(0.8rem, 1.6vmin, 1rem);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.bmi-status.danger {
+  background: color-mix(in srgb, var(--danger) 20%, transparent);
+  color: var(--danger);
+}
+
+.bmi-status.ok {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22C55E;
+}
+
+.bmi-status.warn {
+  background: color-mix(in srgb, var(--warn) 20%, transparent);
+  color: var(--warn);
+}
+
+.bmi-value {
+  font-size: clamp(3rem, 8vmin, 5rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2vmin;
+  text-align: center;
+}
+
+.bmi-details {
+  display: grid;
+  gap: 1vmin;
+}
+
+.bmi-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vmin 0;
+  border-bottom: 0.1vmin solid var(--muted);
+}
+
+.bmi-detail:last-child {
+  border-bottom: none;
+}
+
+.bmi-detail .label {
+  color: var(--subtle);
+  font-size: clamp(0.9rem, 1.8vmin, 1.1rem);
+}
+
+.bmi-detail .value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.8vmin, 1.1rem);
+}
+
+/* BMI Ranges */
+.bmi-ranges h3 {
+  margin: 0 0 2vmin 0;
+  font-size: clamp(1.1rem, 2.4vmin, 1.4rem);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.range-bars {
+  display: grid;
+  gap: 1.2vmin;
+}
+
+.range-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2vmin 1.6vmin;
+  border-radius: 1.2vmin;
+  font-size: clamp(0.9rem, 1.8vmin, 1.1rem);
+  transition: all 200ms ease;
+}
+
+.range-bar.danger {
+  background: color-mix(in srgb, var(--danger) 15%, transparent);
+  color: var(--danger);
+  border: 0.1vmin solid color-mix(in srgb, var(--danger) 30%, transparent);
+}
+
+.range-bar.ok {
+  background: color-mix(in srgb, var(--ok) 15%, transparent);
+  color: var(--ok);
+  border: 0.1vmin solid color-mix(in srgb, var(--ok) 30%, transparent);
+}
+
+.range-bar.warn {
+  background: color-mix(in srgb, var(--warn) 15%, transparent);
+  color: var(--warn);
+  border: 0.1vmin solid color-mix(in srgb, var(--warn) 30%, transparent);
+}
+
+.range-label {
+  font-weight: 600;
+}
+
+.range-value {
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Growth Info */
+.growth-info {
+  background: var(--panel);
+  border-radius: 2vmin;
+  padding: 3vmin;
+  box-shadow: 0 0.6vmin 2vmin rgba(0, 0, 0, 0.3);
+  border: 0.1vmin solid rgba(0, 208, 132, 0.2);
+}
+
+.growth-info h3 {
+  margin: 0 0 1.5vmin 0;
+  font-size: clamp(1.1rem, 2.4vmin, 1.4rem);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.growth-message {
+  color: var(--text);
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  line-height: 1.5;
+}
+
+/* Modern BMI Graph Section */
+.bmi-graph {
+  background: var(--panel);
+  border-radius: 2vmin;
+  padding: 4vmin;
+  box-shadow: 0 0.6vmin 2vmin rgba(0, 0, 0, 0.3);
+  border: 0.1vmin solid rgba(0, 208, 132, 0.2);
+  position: relative;
+  margin: 2vmin 0;
+}
+
+/* Make graph section more prominent on larger screens */
+@media (min-width: 1024px) {
+  .bmi-graph {
+    padding: 5vmin;
+    margin: 3vmin 0;
+  }
+}
+
+.graph-header {
+  margin-bottom: 2vmin;
+  text-align: center;
+}
+
+.graph-header h3 {
+  margin: 0 0 0.5vmin 0;
+  font-size: clamp(1.2rem, 2.6vmin, 1.6rem);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.graph-header p {
+  margin: 0;
+  color: var(--subtle);
+  font-size: clamp(0.9rem, 1.8vmin, 1.1rem);
+}
+
+.graph-container {
+  position: relative;
+  width: 100%;
+  height: 50vmin;
+  min-height: 350px;
+  max-height: 600px;
+  background: linear-gradient(135deg, rgba(0, 208, 132, 0.08), rgba(16, 185, 129, 0.08));
+  border-radius: 1.5vmin;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (min-width: 768px) {
+  .graph-container {
+    height: 45vmin;
+    min-height: 400px;
+    max-height: 700px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .graph-container {
+    height: 40vmin;
+    min-height: 450px;
+    max-height: 800px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .graph-container {
+    height: 35vmin;
+    min-height: 500px;
+    max-height: 900px;
+  }
+}
+
+@media (max-width: 767px) {
+  .graph-container {
+    height: 60vmin;
+    min-height: 300px;
+    max-height: 500px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.modern-graph {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Data point hover effects */
+.data-point {
+  transition: all 0.2s ease;
+}
+
+.data-point:hover {
+  r: 2.5;
+  fill: #22C55E;
+  stroke: #FFFFFF;
+  stroke-width: 0.6;
+}
+
+.point-glow {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.data-point:hover + .point-glow {
+  opacity: 1;
+}
+
+.point-highlight {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.data-point:hover ~ .point-highlight {
+  opacity: 1;
+}
+
+/* Modern Tooltip */
+.bmi-tooltip-modern {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border: 0.1vmin solid rgba(255, 255, 255, 0.2);
+  border-radius: 1vmin;
+  padding: 1.5vmin;
+  color: white;
+  font-size: clamp(0.8rem, 1.6vmin, 1rem);
+  box-shadow: 0 0.8vmin 2.4vmin rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 180px;
+  pointer-events: none;
+  animation: tooltipFadeIn 0.2s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltip-header {
+  border-bottom: 0.1vmin solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1vmin;
+  margin-bottom: 1vmin;
+}
+
+.tooltip-date {
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.8vmin, 1.1rem);
+  color: #10B981;
+  margin-bottom: 0.3vmin;
+}
+
+.tooltip-bmi {
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.6vmin, 1rem);
+  color: #22C55E;
+}
+
+.tooltip-content {
+  display: grid;
+  gap: 0.5vmin;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tooltip-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.7rem, 1.4vmin, 0.9rem);
+}
+
+.tooltip-value {
+  color: white;
+  font-weight: 600;
+  font-size: clamp(0.7rem, 1.4vmin, 0.9rem);
+}
+
+/* Chart Section */
+.bmi-chart-section {
+  background: var(--panel);
+  border-radius: 2vmin;
+  padding: 3vmin;
+  box-shadow: 0 0.6vmin 2vmin rgba(0, 0, 0, 0.3);
+  border: 0.1vmin solid rgba(0, 208, 132, 0.2);
+}
+
+.chart-header {
+  margin-bottom: 3vmin;
+}
+
+.chart-header h2 {
+  margin: 0 0 0.5vmin 0;
+  font-size: clamp(1.4rem, 3vmin, 2rem);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.chart-header p {
+  margin: 0;
+  color: var(--subtle);
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+}
+
+.bmi-chart {
+  position: relative;
+  height: 50vh;
+  min-height: 40vmin;
+}
+
+.chart-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2vmin;
+  overflow: hidden;
+}
+
+.bmi-chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Enhanced Tooltip */
+.bmi-tooltip {
+  position: absolute;
+  transform: translate(-50%, -120%);
+  background: var(--panel);
+  border: 0.1vmin solid rgba(0, 208, 132, 0.2);
+  border-radius: 1.2vmin;
+  padding: 1.6vmin;
+  color: var(--text);
+  box-shadow: 0 0.8vmin 2.4vmin rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+  min-width: 20vmin;
+  backdrop-filter: blur(10px);
+}
+
+.tooltip-header {
+  margin-bottom: 1vmin;
+  padding-bottom: 1vmin;
+  border-bottom: 0.1vmin solid var(--muted);
+}
+
+.tooltip-date {
+  font-weight: 600;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  margin-bottom: 0.5vmin;
+}
+
+.tooltip-bmi {
+  color: #22C55E;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.8vmin, 1.1rem);
+}
+
+.tooltip-details {
+  display: grid;
+  gap: 0.8vmin;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(0.9rem, 1.8vmin, 1.1rem);
+}
+
+.tooltip-row .label {
+  color: var(--subtle);
+}
+
+.tooltip-row .value {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Entries Section */
+.bmi-entries {
+  background: var(--panel);
+  border-radius: 2vmin;
+  padding: 3vmin;
+  box-shadow: 0 0.6vmin 2vmin rgba(0, 0, 0, 0.1);
+  border: 0.1vmin solid var(--muted);
+}
+
+.entries-header {
+  margin-bottom: 3vmin;
+}
+
+.entries-header h2 {
+  margin: 0 0 0.5vmin 0;
+  font-size: clamp(1.4rem, 3vmin, 2rem);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.entries-header p {
+  margin: 0;
+  color: var(--subtle);
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+}
+
+.entries-list {
+  display: grid;
+  gap: 2vmin;
+}
+
+.entry-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2vmin;
+  align-items: center;
+  padding: 2vmin;
+  background: var(--bg);
+  border-radius: 1.2vmin;
+  border: 0.1vmin solid rgba(0, 208, 132, 0.2);
+  transition: all 200ms ease;
+}
+
+.entry-card:hover {
+  transform: translateY(-0.1vmin);
+  box-shadow: 0 0.4vmin 1.2vmin rgba(0, 0, 0, 0.1);
+}
+
+.entry-date {
+  color: var(--subtle);
+  font-size: clamp(0.9rem, 1.8vmin, 1.1rem);
+  font-weight: 500;
+}
+
+.entry-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vmin;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vmin;
+}
+
+.metric-label {
+  color: var(--subtle);
+  font-size: clamp(0.8rem, 1.6vmin, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+}
+
+.bmi-value-display {
+  color: #22C55E;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 1vmin;
+}
+
+.edit-btn, .delete-btn {
+  padding: 0.8vmin 1.6vmin;
+  border: none;
+  border-radius: 0.8vmin;
+  font-size: clamp(0.8rem, 1.6vmin, 1rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.edit-btn {
+  background: var(--accent);
+  color: white;
+}
+
+.edit-btn:hover {
+  background: color-mix(in srgb, var(--accent) 80%, white);
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: var(--danger);
+  color: white;
+}
+
+.delete-btn:hover {
+  background: color-mix(in srgb, var(--danger) 80%, white);
+  transform: scale(1.05);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 6vmin;
+  color: var(--subtle);
+}
+
+.empty-icon {
+  font-size: clamp(3rem, 8vmin, 5rem);
+  margin-bottom: 2vmin;
+}
+
+.empty-state h3 {
+  margin: 0 0 1vmin 0;
+  color: var(--text);
+  font-size: clamp(1.2rem, 2.6vmin, 1.6rem);
+  font-weight: 600;
+}
+
+.empty-state p {
+  margin: 0 0 3vmin 0;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  line-height: 1.5;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 1.2vmin 2.4vmin;
+  border-radius: 1.2vmin;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.primary-btn:hover {
+  background: color-mix(in srgb, var(--accent) 80%, white);
+  transform: translateY(-0.2vmin);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .bmi-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .entry-metrics {
+    grid-template-columns: 1fr;
+    gap: 1vmin;
+  }
+  
+  .entry-card {
+    grid-template-columns: 1fr;
+    gap: 1.5vmin;
+    text-align: center;
+  }
+  
+  .entry-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .bmi-header {
+    flex-direction: column;
+    gap: 2vmin;
+    text-align: center;
+  }
+  
+  .bmi-chart {
+    height: 40vh;
+  }
+}
+
+/* BMI Modal Styles */
+.bmi-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2vmin;
+}
+
+.bmi-modal {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2vmin;
+  padding: 4vmin;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.bmi-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vmin;
+  padding-bottom: 2vmin;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bmi-modal-header h2 {
+  color: white;
+  font-size: clamp(1.5rem, 4vmin, 2rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5vmin;
+  border-radius: 50%;
+  width: 4vmin;
+  height: 4vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.bmi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3vmin;
+}
+
+.bmi-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin;
+}
+
+.bmi-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vmin;
+}
+
+.bmi-form label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.9rem, 2.5vmin, 1.1rem);
+  font-weight: 500;
+  margin-bottom: 0.5vmin;
+}
+
+.bmi-form input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1vmin;
+  padding: 2vmin;
+  color: white;
+  font-size: clamp(0.9rem, 2.5vmin, 1.1rem);
+  transition: all 0.2s ease;
+}
+
+.bmi-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.bmi-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bmi-preview {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5vmin;
+  padding: 2.5vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.9rem, 2.5vmin, 1.1rem);
+  font-weight: 500;
+}
+
+.preview-value {
+  color: white;
+  font-size: clamp(1.2rem, 3vmin, 1.5rem);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1vmin;
+}
+
+.preview-category {
+  color: var(--accent);
+  font-size: clamp(0.8rem, 2vmin, 1rem);
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  gap: 2vmin;
+  margin-top: 1vmin;
+}
+
+.btn-primary, .btn-secondary {
+  flex: 1;
+  padding: 2.5vmin;
+  border: none;
+  border-radius: 1vmin;
+  font-size: clamp(0.9rem, 2.5vmin, 1.1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #7C8BFF);
+  color: white;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Edit modal specific button styles */
+.cancel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2.5vmin;
+  border-radius: 1vmin;
+  font-size: clamp(0.9rem, 2.5vmin, 1.1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.save-btn {
+  background: linear-gradient(135deg, var(--accent), #7C8BFF);
+  color: white;
+  border: none;
+  padding: 2.5vmin;
+  border-radius: 1vmin;
+  font-size: clamp(0.9rem, 2.5vmin, 1.1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+  flex: 1;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+/* Textarea styles */
+.bmi-form textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1vmin;
+  padding: 2vmin;
+  color: white;
+  font-size: clamp(0.9rem, 2.5vmin, 1.1rem);
+  font-family: inherit;
+  resize: vertical;
+  min-height: 8vmin;
+  transition: all 0.2s ease;
+}
+
+.bmi-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bmi-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive modal adjustments */
+@media (max-width: 767px) {
+  .bmi-modal {
+    padding: 3vmin;
+    margin: 1vmin;
+  }
+  
+  .bmi-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 2vmin;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .bmi-preview {
+    flex-direction: column;
+    gap: 1vmin;
+    text-align: center;
+  }
+}
+
+

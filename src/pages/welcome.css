@@ -1,0 +1,63 @@
+:root {
+  --text: #FFFFFF;
+  --accent: #00D084; /* Vibrant green */
+  --bg: #000000; /* Dark background */
+  --muted: rgba(0, 208, 132, 0.2); /* Green tinted border */
+  --fg: #FFFFFF;
+  --subtle: rgba(255, 255, 255, 0.7);
+  --panel: rgba(255, 255, 255, 0.08);
+}
+
+.welcome-section {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(60vmin 30vmin at 50% 10%, rgba(0, 208, 132, 0.15), transparent),
+              linear-gradient(180deg, rgba(16, 185, 129, 0.2), transparent 100%),
+              #000000;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2vmin;
+}
+
+.welcome-title {
+  margin: 0;
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 10vmin, 5.5rem);
+}
+
+.welcome-logo {
+  width: 500px;
+  height: auto;
+  display: block;
+  transition: opacity 200ms ease;
+}
+
+.welcome-logo:hover {
+  opacity: 0.8;
+}
+
+.scroll-hint {
+  margin-top: 2vmin;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(1.1rem, 2.6vmin, 1.4rem);
+}
+
+
+@media (max-width: 800px) {
+  .welcome-logo {
+    width: 120px;
+  }
+  .scroll-hint {
+    margin-top: 1.5vmin;
+  }
+}

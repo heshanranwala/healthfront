@@ -1,0 +1,16 @@
+.sidebar { display: grid; align-content: start; gap: 1.4vmin; padding: 2vmin; width: 18vw; background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border-right: 0.25vmin solid rgba(0, 208, 132, 0.2); min-height: 100vh; position: relative; box-shadow: inset -0.2vmin 0 0 rgba(0, 208, 132, 0.15); }
+.menu { list-style: none; margin: 0; padding: 0; display: grid; gap: 1vmin; }
+.nav-item { display: block; text-decoration: none; color: var(--fg); background: rgba(255,255,255,0.06); padding: 1.4vmin 1.8vmin; border-radius: 1vmin; font-size: 2vmin; transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease; border: 0.1vmin solid transparent; }
+.nav-item:hover { background: rgba(0, 208, 132, 0.12); border-color: var(--accent); transform: translateX(0.2vmin); }
+.nav-item.active { background: var(--accent); color: white; box-shadow: 0 0.6vmin 1.6vmin rgba(0, 208, 132, 0.35); }
+.hamburger { position: fixed; top: 1.6vmin; left: 1.6vmin; width: 6vmin; height: 6vmin; background: rgba(255,255,255,0.12); color: white; display: none; align-items: center; justify-content: center; border: 0; border-radius: 1vmin; z-index: 1100; box-shadow: 0 0.6vmin 2vmin rgba(0, 208, 132, 0.35); }
+.hamburger span { display: block; width: 60%; height: 0.4vmin; background: white; margin: 0.6vmin auto; }
+.drawer-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1090; backdrop-filter: blur(0.4vmin); }
+
+@media (max-width: 900px) {
+  .hamburger { display: inline-flex; }
+  .sidebar { position: fixed; left: 0; top: 0; width: 72vw; max-width: 80vw; height: 100vh; z-index: 1110; transition: transform 200ms ease, visibility 0s linear 200ms; box-shadow: 0 0 2vmin rgba(0,0,0,0.4); transform: translateX(-100%); pointer-events: none; visibility: hidden; }
+  .sidebar.open { transform: translateX(0); pointer-events: auto; visibility: visible; transition: transform 200ms ease, visibility 0s; }
+}
+
+

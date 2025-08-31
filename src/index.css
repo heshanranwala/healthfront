@@ -1,0 +1,98 @@
+:root {
+  --bg: #0e0f12;
+  --panel: #15171c;
+  --muted: #2a2d35;
+  --fg: #e6e8f0;
+  --text: #e6e8f0; /* Same as --fg for consistency */
+  --subtle: #a5acb8;
+  --accent: #00D084; /* Vibrant green */
+  --accent-strong: #00B570; /* Darker green */
+  --danger: #EF4444;
+  --warn: #F59E0B;
+  --ok: #22C55E;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: var(--fg);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--accent-strong);
+}
+
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+
+/* Hide scrollbars across browsers */
+html, body {
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Disable overscroll rubber-banding and bounce */
+html, body {
+  overscroll-behavior: none;
+  overflow: auto; /* allow scrolling on app pages */
+}
+
+/* Common buttons */
+.primary { background: var(--accent); color: white; border: 0; border-radius: 1.2vmin; padding: 1.6vmin 2.4vmin; transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease; box-shadow: 0 0.4vmin 1.2vmin rgba(0, 208, 132, 0.35); }
+.primary:hover { background: var(--accent-strong); transform: translateY(-0.2vmin); box-shadow: 0 0.6vmin 1.6vmin rgba(0, 208, 132, 0.45); }
+.ghost { background: var(--muted); color: var(--fg); border: 0; border-radius: 1.2vmin; padding: 1.2vmin 1.8vmin; }
+
+.chip { background: var(--muted); padding: 0.8vmin 1.2vmin; border-radius: 1vmin; }
+.pill { border-radius: 2vmin; background: var(--panel); padding: 1.6vmin; box-shadow: 0 0.4vmin 1.6vmin rgba(0,0,0,0.2); }
+.pill.danger { background: color-mix(in srgb, var(--danger) 45%, var(--panel)); }
+.pill.warn { background: color-mix(in srgb, var(--warn) 45%, var(--panel)); }
+.pill.muted { background: color-mix(in srgb, var(--muted) 70%, var(--panel)); }
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--accent);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

@@ -1,0 +1,254 @@
+/* Auth Page - Green Theme Color Palette */
+:root {
+  --text: #FFFFFF; /* White text on dark */
+  --accent: #00D084; /* Vibrant green primary */
+  --accent-strong: #00B570; /* Darker green for hover */
+  --bg: #000000; /* Black background */
+  --muted: rgba(0, 208, 132, 0.3); /* Green tinted muted */
+  --fg: #FFFFFF; /* White foreground */
+  --subtle: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  --panel: rgba(255, 255, 255, 0.1); /* Very transparent white */
+  --neon-glow: 0 0 20px rgba(0, 208, 132, 0.4), 0 0 40px rgba(0, 208, 132, 0.2);
+}
+
+.auth-section {
+  min-height: 100vh;
+  height: 100vh;
+  padding: 6vmin 4vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(60vmin 30vmin at 50% 10%, rgba(0, 208, 132, 0.15), transparent),
+              linear-gradient(180deg, rgba(16, 185, 129, 0.2), transparent 100%),
+              #000000;
+  position: relative;
+}
+
+.auth-landing {
+  width: min(92vw, 86vmin);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 0.2vmin solid rgba(0, 208, 132, 0.2);
+  border-radius: 2.4vmin;
+  padding: 5vmin 4vmin;
+  box-shadow: 0 0.8vmin 2.4vmin rgba(0,0,0,0.5);
+  display: grid;
+  gap: 3vmin;
+}
+
+.page-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(2rem, 6vmin, 4rem);
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--fg), color-mix(in srgb, var(--accent) 60%, var(--fg)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.page-subtitle {
+  margin: 0 auto;
+  text-align: center;
+  color: var(--subtle);
+  font-size: clamp(1rem, 2.4vmin, 1.4rem);
+  width: 90%;
+}
+
+.actions-row {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 2vmin;
+}
+
+.actions-row .primary {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 1.6vmin 2.6vmin;
+  border-radius: 1.2vmin;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 0.6vmin 1.8vmin rgba(0,0,0,0.25);
+  font-weight: 600;
+}
+
+.actions-row .primary:hover { 
+  transform: translateY(-0.3vmin); 
+  background: var(--accent-strong); 
+  box-shadow: 0 0.6vmin 1.8vmin rgba(0,0,0,0.25), var(--neon-glow);
+}
+.actions-row button:not(.primary) {
+  background: var(--muted);
+  color: var(--text);
+  border: none;
+  padding: 1.6vmin 2.6vmin;
+  border-radius: 1.2vmin;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  cursor: pointer;
+}
+
+.offer-title { text-align: center; margin: 0; font-size: clamp(1.2rem, 2.8vmin, 1.8rem); color: var(--text); }
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vmin;
+}
+
+.offer-card {
+  height: 16vmin;
+  border-radius: 1.6vmin;
+  border: 0.2vmin solid rgba(0, 208, 132, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  box-shadow: inset 0 0 0 0.2vmin rgba(255,255,255,0.03), 0 0.4vmin 1.2vmin rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: all 300ms ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.offer-card:hover {
+  transform: scale(1.05);
+  box-shadow: inset 0 0 0 0.2vmin rgba(255,255,255,0.03), 0 0.8vmin 2.4vmin rgba(0,0,0,0.25), var(--neon-glow);
+}
+
+.offer-card-content {
+  padding: 2vmin;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.offer-card-content h3 {
+  margin: 0;
+  font-size: clamp(1rem, 2.2vmin, 1.3rem);
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1vmin;
+}
+
+.offer-card-content p {
+  margin: 0;
+  font-size: clamp(0.8rem, 1.8vmin, 1rem);
+  color: var(--subtle);
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 300ms ease;
+}
+
+.offer-card:hover .offer-card-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal (scoped to auth) */
+.auth-section .modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: grid;
+  place-items: center;
+  padding: 3vmin;
+  z-index: 1000;
+}
+
+.auth-section .modal {
+  width: min(92vw, 70vmin);
+  padding: 4vmin;
+  border: 0.2vmin solid rgba(0, 208, 132, 0.2);
+  border-radius: 2vmin;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1vmin 3vmin rgba(0,0,0,0.5);
+}
+
+.auth-section .modal-close {
+  position: absolute;
+  top: 1.6vmin;
+  right: 1.6vmin;
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  font-size: 2.6vmin;
+  cursor: pointer;
+}
+
+/* Forms */
+.auth-form {
+  display: grid;
+  gap: 1.6vmin;
+}
+
+.auth-form label { color: var(--text); font-size: clamp(1rem, 2vmin, 1.2rem); }
+
+.auth-form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.6vmin 2vmin;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  border: 0.1vmin solid rgba(0, 208, 132, 0.3);
+  border-radius: 1vmin;
+  transition: all 0.2s ease;
+}
+
+/* Password field with eye toggle */
+.password-field { position: relative; display: grid; align-items: center; }
+.password-field input { padding-right: 8vmin; }
+.toggle-password {
+  position: absolute;
+  right: 1.2vmin;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.6vmin;
+  border-radius: 0.8vmin;
+}
+.toggle-password:hover { background: rgba(255, 255, 255, 0.08); }
+
+.auth-form input:focus { 
+  outline: none; 
+  border-color: var(--accent); 
+  box-shadow: 0 0 0 0.2vmin color-mix(in srgb, var(--accent) 30%, transparent), var(--neon-glow); 
+}
+
+.auth-form .primary {
+  background: var(--accent);
+  color: var(--bg);
+  border: 0;
+  padding: 1.8vmin 2.6vmin;
+  border-radius: 1.2vmin;
+  font-size: clamp(1rem, 2vmin, 1.2rem);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 200ms ease;
+}
+
+.auth-form .primary:hover {
+  background: var(--accent-strong);
+  transform: translateY(-0.2vmin);
+  box-shadow: var(--neon-glow);
+}
+
+/* Small screens */
+@media (max-width: 800px) {
+  .auth-landing { width: min(94vw, 92vmin); padding: 5vmin 3.2vmin; }
+  .offer-grid { grid-template-columns: 1fr; }
+  .offer-card { height: 22vmin; }
+  .actions-row { grid-auto-flow: row; }
+}
+
+

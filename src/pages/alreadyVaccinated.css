@@ -1,0 +1,670 @@
+/* AlreadyVaccinated Page - Industry Standard CSS */
+
+/* CSS Variables for consistent theming - Green Color Palette */
+:root {
+  --primary-color: #00D084; /* Vibrant green primary */
+  --primary-dark: #00B570; /* Darker green */
+  --primary-light: #00E89A; /* Lighter green */
+  --secondary-color: #10B981; /* Emerald green */
+  --accent-color: #059669; /* Deep emerald */
+  --success-color: #22C55E; /* Success green */
+  --warning-color: #F59E0B; /* Amber warning */
+  --danger-color: #EF4444; /* Red danger */
+  --info-color: #06B6D4; /* Cyan info */
+  
+  --text-primary: #FFFFFF; /* White text on dark */
+  --text-secondary: #E2E8F0; /* Light gray text */
+  --text-muted: #A0AEC0; /* Muted text */
+  --text-light: #718096; /* Very light text */
+  
+  --bg-primary: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  --bg-secondary: rgba(255, 255, 255, 0.05); /* Very transparent white */
+  --bg-tertiary: rgba(255, 255, 255, 0.02); /* Almost transparent */
+  --bg-dark: #000000; /* Black background */
+  
+  --border-color: rgba(0, 208, 132, 0.2); /* Green tinted border */
+  --border-light: rgba(0, 208, 132, 0.1); /* Light green border */
+  --border-dark: rgba(0, 208, 132, 0.3); /* Darker green border */
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+  
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: radial-gradient(60vmin 30vmin at 50% 10%, rgba(0, 208, 132, 0.15), transparent),
+              linear-gradient(180deg, rgba(16, 185, 129, 0.2), transparent 100%),
+              #000000;
+  min-height: 100vh;
+}
+
+/* Page Container */
+.already-vaccinated-page {
+  min-height: 100vh;
+  background: radial-gradient(60vmin 30vmin at 50% 10%, rgba(0, 208, 132, 0.15), transparent),
+              linear-gradient(180deg, rgba(16, 185, 129, 0.2), transparent 100%),
+              #000000;
+  padding: var(--spacing-lg);
+}
+
+/* Header Section */
+.page-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  padding: var(--spacing-2xl) 0;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: white;
+  margin: 0 0 var(--spacing-md) 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Content Layout */
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+
+/* Vaccines Section */
+.vaccines-section {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--border-light);
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.section-count {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+}
+
+/* Vaccines Grid */
+.vaccines-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.vaccine-card-av {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  border: 2px solid var(--border-light);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.vaccine-card-av::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.vaccine-card-av:hover::before {
+  transform: scaleX(1);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vaccine-card-av:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.vaccine-card-av.selected {
+  border-color: var(--success-color);
+  background: linear-gradient(135deg, rgba(0, 204, 0, 0.05), rgba(0, 204, 0, 0.02));
+}
+
+.vaccine-card-av.unselected {
+  border-color: var(--border-color);
+}
+
+/* Vaccine Header */
+.vaccine-header-av {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-lg);
+}
+
+.vaccine-name-av {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1;
+  line-height: 1.3;
+}
+
+.vaccine-dose-av {
+  color: var(--text-secondary);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  white-space: nowrap;
+}
+
+/* Vaccine Status */
+.vaccine-status-av {
+  margin-bottom: var(--spacing-lg);
+}
+
+.status-indicator-av {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.status-indicator-av.received {
+  background: linear-gradient(135deg, rgba(0, 204, 0, 0.15), rgba(0, 204, 0, 0.05));
+  color: var(--success-color);
+  border: 2px solid rgba(0, 204, 0, 0.2);
+}
+
+.status-indicator-av.pending {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 193, 7, 0.05));
+  color: var(--warning-color);
+  border: 2px solid rgba(255, 193, 7, 0.2);
+}
+
+/* Vaccine Actions */
+.vaccine-actions-av {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.vaccine-checkbox-av {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.vaccine-checkbox-av:hover {
+  color: var(--text-primary);
+}
+
+.vaccine-checkbox-av input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark-av {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  position: relative;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vaccine-checkbox-av input[type="checkbox"]:checked + .checkmark-av {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.vaccine-checkbox-av input[type="checkbox"]:checked + .checkmark-av::after {
+  content: '✓';
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.checkbox-label-av {
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  font-size: clamp(4rem, 10vw, 6rem);
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--text-primary);
+  font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+  font-weight: 600;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Profile Card */
+.profile-card-av {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.profile-photo-av {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md) auto;
+  box-shadow: var(--shadow-md);
+}
+
+.profile-photo-av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder-av {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.profile-info-av h3 {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: clamp(1.2rem, 2.4vw, 1.4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.profile-role-av {
+  color: var(--text-secondary);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Progress Section */
+.progress-section-av {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+}
+
+.progress-title-av {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.progress-bar-av {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.progress-fill-av {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+  border-radius: var(--radius-xl);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-stats-av {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.stat-av {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+}
+
+.stat-value-av {
+  display: block;
+  font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1;
+}
+
+.stat-label-av {
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Action Section */
+.action-section-av {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+}
+
+.primary-btn-av {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-btn-av::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.primary-btn-av:hover::before {
+  left: 100%;
+}
+
+.primary-btn-av:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+}
+
+.primary-btn-av:active {
+  transform: translateY(0);
+}
+
+.btn-icon-av {
+  font-size: 1.2em;
+}
+
+.action-hint-av {
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  color: var(--text-muted);
+  margin: var(--spacing-lg) 0 0 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  color: white;
+}
+
+.loading-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .already-vaccinated-page {
+    padding: var(--spacing-md);
+  }
+  
+  .page-header {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .vaccines-section {
+    padding: var(--spacing-lg);
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .vaccine-header-av {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+  
+  .vaccine-actions-av {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .progress-stats-av {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .vaccine-card-av {
+    padding: var(--spacing-lg);
+  }
+  
+  .profile-photo-av {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus States */
+.vaccine-checkbox-av:focus-within .checkmark-av {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.primary-btn-av:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .vaccine-card-av {
+    border-width: 3px;
+  }
+  
+  .status-indicator-av {
+    border-width: 2px;
+  }
+}
