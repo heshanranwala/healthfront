@@ -176,8 +176,7 @@ function LoginForm({ navigate }: { navigate: (path: string) => void }) {
         placeholder="you@example.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        pattern="[A-Za-z0-9._%+-]+@gmail\.com"
-        title="Email must be a Gmail address (example@gmail.com)"
+        title="Please enter a valid Gmail address"
       />
 
       <label htmlFor="login-password">Password</label>
@@ -289,8 +288,7 @@ function SignupForm({ navigate }: { navigate: (path: string) => void }) {
         placeholder="you@example.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        pattern="[A-Za-z0-9._%+-]+@gmail\.com"
-        title="Email must be a Gmail address (example@gmail.com)"
+        title="Please enter a valid Gmail address"
       />
 
       <label htmlFor="signup-password">Password</label>
